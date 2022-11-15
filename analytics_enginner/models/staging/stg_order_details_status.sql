@@ -1,0 +1,1 @@
+with source as (select * from {{source('northwind', 'order_details_status')}}) Select * from source 
