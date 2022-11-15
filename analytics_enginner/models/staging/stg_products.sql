@@ -1,1 +1,1 @@
-with source as (select * from {{source('northwind', 'products')}}) Select * from source 
+with source as (select * from {{source('northwind', 'products')}}) Select *, current_timestamp() as ingestion_timestamp from source 
