@@ -24,6 +24,6 @@ path = 'C:/analytics-engineer-bootcamp/analytics_enginner/models/staging/'
 prefix = 'stg_'
 for t in tables:
     f = open(f'{path}{prefix}{t}.sql',"w+")
-    query = f"with source as (select * from {{{{source('northwind', '{t}')}}}}) Select * from source "
+    query = f"with source as (select * from {{{{source('northwind', '{t}')}}}}) Select *, current_timestamp() as ingestion_timestamp from source "
     f.write(query)
     f.close()
